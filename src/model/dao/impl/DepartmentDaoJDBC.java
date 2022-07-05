@@ -26,7 +26,7 @@ public class DepartmentDaoJDBC implements MethodsDao<Department>{
 	}
 
 	@Override
-	public Object findById(Integer id) {
+	public Department findById(Integer id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
