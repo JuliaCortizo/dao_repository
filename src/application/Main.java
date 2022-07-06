@@ -3,6 +3,7 @@ package application;
 
 import java.util.Date;
 import java.util.List;
+import java.util.Scanner;
 
 import model.dao.DaoFactory;
 import model.dao.MethodsDao;
@@ -14,8 +15,9 @@ public class Main {
 
 	public static void main(String[] args) {
 
-		
-		MethodsDao<Seller> mSeller = DaoFactory.createSellerDao();
+		//Seller teste
+		Scanner sc = new Scanner(System.in);
+		/*MethodsDao<Seller> mSeller = DaoFactory.createSellerDao();
 		System.out.println("===TESTE 1 - seller findById ===");
 		Seller seller = mSeller.findById(3);
 		System.out.println(seller);
@@ -44,6 +46,38 @@ public class Main {
 		seller.setName("Ju");
 		mSeller.update(seller);
 		System.out.println("Updated!");
+		
+		System.out.println("\n===TESTE 6 - seller delete ===");
+		System.out.println("Insira o id que deseja excluir: ");
+		int id = sc.nextInt();
+		mSeller.deleteById(id);
+		*/
+		
+		//Department teste
+
+		MethodsDao<Department> mDepart = DaoFactory.createDepartmentDao();
+		
+		/*System.out.println("\n===TESTE 1 - seller delete ===");
+		System.out.println("Insira o id que deseja excluir: ");
+		int id = sc.nextInt();
+		mDepart.deleteById(id);*/
+		
+		System.out.println("\n===TESTE 2 - department insert ===");
+		Department dep = new Department(null, "Notebooks");
+		mDepart.insert(dep);
+		System.out.println("Inserted! New id = " + dep.getId());
+		sc.close();
+		
+		System.out.println("===TESTE 3 - department findById ===");
+		Department depart = mDepart.findById(1);
+		System.out.println(depart);
+		
+		System.out.println("\n===TESTE 4 - department findAll ===");
+		List<Department> list = mDepart.findAll();
+		for (Department d : list) {
+			System.out.println(d);
+		}
+		
 	}
 
 }

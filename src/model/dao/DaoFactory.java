@@ -13,7 +13,7 @@ public class DaoFactory {
 	}
 	
 	public static MethodsDao<Department> createDepartmentDao(){
-		return new DepartmentDaoJDBC();
+		return new DepartmentDaoJDBC(DB.getConnection());
 	}
 	
 	public static SellerDaoJDBC createSeller() {
