@@ -38,7 +38,12 @@ public class Main {
 		Seller newSeller = new Seller(null, "Greg", "teste", new Date(), 345.9, depart);
 		mSeller.insert(newSeller);
 		System.out.println("Inserted! New id = " + newSeller.getId());
-
+		
+		System.out.println("\n===TESTE 5 - seller update ===");
+		seller = mSeller.findById(1);
+		seller.setName("Ju");
+		mSeller.update(seller);
+		System.out.println("Updated!");
 	}
 
 }
